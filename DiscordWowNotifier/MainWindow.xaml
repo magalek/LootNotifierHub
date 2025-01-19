@@ -1,0 +1,21 @@
+﻿<Window x:Class="DiscordWowNotifier.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DiscordWowNotifier"
+        mc:Ignorable="d"
+        Title="Loot Notifier Hub" Height="311" Width="711">
+    <Grid Background="#FF797979">
+        <TextBox Name="discord_webhook" HorizontalAlignment="Left" Margin="136,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="550" Text="{Binding Path=DiscordWebhook, Mode=TwoWay}"/>
+        <Label Content="Discord webhook:" HorizontalAlignment="Left" Margin="10,6,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label Content="Game directory path:" HorizontalAlignment="Left" Margin="10,37,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <TextBox Name="game_directory_path" HorizontalAlignment="Left" Margin="136,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="550" Text="{Binding Path=GamePath, Mode=TwoWay}"/>
+        <Button Name="start_button" Content="Start" HorizontalAlignment="Left" Margin="276,66,0,0" VerticalAlignment="Top" Height="24" Width="120"/>
+        <ScrollViewer Margin="10,97,10,10">
+            <TextBlock Name="error_box" TextWrapping="Wrap"/>
+        </ScrollViewer>
+        <ComboBox Name="quality_dropdown" HorizontalAlignment="Left" Margin="136,68,0,0" VerticalAlignment="Top" Width="120" SelectedItem="{Binding Path=QualityFilter, Mode=TwoWay}" Background="Black" SelectionChanged="OnComboBoxChanged"/>
+        <Label Content="Item Quality Filter:" HorizontalAlignment="Left" Margin="11,66,0,0" VerticalAlignment="Top" Width="120" FontWeight="Bold"/>
+    </Grid>
+</Window>
